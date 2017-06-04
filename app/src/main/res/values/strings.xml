@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">GetAllSideChannel</string>
+    <string name="ip_hint">Attacker Server IP</string>
+    <string name="attacker_default_ip">192.168.0.110</string>
+    <string name="port_hint">Attacker Server Port</string>
+    <string name="default_attacker_port">55555</string>
+    <string name="begin_btn_text">BEGIN</string>
+    <string name="stop_btn_text">STOP</string>
+    <string name="punch_cap_hint">Punch Cap #</string>
+    <string name="default_cap_num">15</string>
+    <string name="default_sec">5</string>
+    <string name="delaytime_hint">Delay Time in Second</string>
+</resources>

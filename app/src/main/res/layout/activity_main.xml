@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp" >
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:hint="@string/ip_hint"
+        android:textAlignment="center"
+        android:text="@string/attacker_default_ip"
+        android:id="@+id/attackerip_edittext"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/attackerip_edittext"
+        android:layout_marginTop="50dp"
+        android:hint="@string/port_hint"
+        android:text="@string/default_attacker_port"
+        android:textAlignment="center"
+        android:id="@+id/attackerport_edittext"
+        />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/punch_cap_hint"
+        android:text="@string/default_cap_num"
+        android:textAlignment="center"
+        android:id="@+id/punchcap_edittext"
+        android:layout_below="@id/attackerport_edittext"
+        android:layout_marginTop="50dp"
+
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/delaytime_hint"
+        android:text="@string/default_sec"
+        android:textAlignment="center"
+        android:id="@+id/delaysec_edittext"
+        android:layout_below="@id/punchcap_edittext"
+        android:layout_marginTop="50dp"
+
+        />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/delaysec_edittext"
+        android:layout_marginTop="10dp"
+        android:text="@string/begin_btn_text"
+        android:id="@+id/begin_btn"
+        android:layout_marginStart="40dp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/delaysec_edittext"
+        android:layout_marginTop="10dp"
+        android:text="@string/stop_btn_text"
+        android:id="@+id/stop_btn"
+        android:layout_marginStart="260dp"
+        />
+
+</RelativeLayout>
