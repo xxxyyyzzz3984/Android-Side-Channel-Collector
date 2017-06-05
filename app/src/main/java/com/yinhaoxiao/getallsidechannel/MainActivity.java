@@ -63,17 +63,34 @@ public class MainActivity extends AppCompatActivity {
                 mCancelThread = true;
                 mBeginBtn.setEnabled(true);
                 mStopBtn.setEnabled(false);
+
             }
         });
+
+        final EditText NumPunchEditText = (EditText) findViewById(R.id.punchcap_edittext);
+        final EditText IPEditText = (EditText) findViewById(R.id.attackerip_edittext);
+        final EditText PortEditText = (EditText) findViewById(R.id.attackerport_edittext);
+        final EditText DelayEditText = (EditText) findViewById(R.id.delaysec_edittext);
 
         mBeginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mNumPunches = Integer.parseInt(((EditText) findViewById(R.id.punchcap_edittext)).getText().toString());
-                mAttackerServerIP = ((EditText) findViewById(R.id.attackerip_edittext)).getText().toString();
-                mAttackerServerPort = Integer.parseInt(((EditText) findViewById(R.id.attackerport_edittext)).getText().toString());
-                mDelaySec = Integer.parseInt(((EditText) findViewById(R.id.delaysec_edittext)).getText().toString());
-                
+                mNumPunches = Integer.parseInt(NumPunchEditText.getText().toString());
+                mAttackerServerIP = (IPEditText.getText().toString());
+                mAttackerServerPort = Integer.parseInt(PortEditText.getText().toString());
+                mDelaySec = Integer.parseInt(DelayEditText.getText().toString());
+
+                // reset in case for restart
+                mCpuHashmap.clear();
+                mUtimeHashmap.clear();
+                mStimeHashmap.clear();
+                mVssHashmap.clear();
+                mRssHashmap.clear();
+                mTcpsndHashmap.clear();
+                mTcprcvHashmap.clear();
+                mTimestampHashmap.clear();
+
+                mCancelThread = false;
                 try {
                     runGetSideChannelThread();
                     mBeginBtn.setEnabled(false);
@@ -82,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
                 catch (Exception e) {
                     e.printStackTrace();
                 }
-                mCancelThread = false;
             }
         });
 
@@ -192,6 +208,7 @@ public class MainActivity extends AppCompatActivity {
                 mTcpsndHashmap.clear();
                 mTcprcvHashmap.clear();
                 mTimestampHashmap.clear();
+                num_visited_punches = 0;
             }
 
         }
